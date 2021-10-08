@@ -1,6 +1,6 @@
 const DataInfo = () => {
   return (
-    <article>
+    <article className="">
       
     </article>
   );

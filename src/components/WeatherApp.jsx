@@ -6,16 +6,18 @@ import { helperFetch } from "../helpers/helperFetch";
 import APIKEY from "../helpers/helperKey";
 
 export const WeatherApp = () => {
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState({});
   const [error, setError] = useState(null);
 
   const apiConnect = helperFetch();
 
-  let currentUrl = `api.openweathermap.org/data/2.5/weather?q=${info}&appid=${APIKEY.key}`;
-  let forecastUrl = "";
+  const endpoints = {
+    currentUrl: `https://api.openweathermap.org/data/2.5/weather?q=${info.city}&appid=${APIKEY.key}`,
+    forecastUrl: `https://api.openweathermap.org/data/2.5/forecast?q=${info.city}&appid=${APIKEY.key}`,
+  }
 
   useEffect(() => {
-    apiConnect(currentUrl)
+    apiConnect(endpoints.currentUrl)
       .then(res => {
         if (!res.ok) {
           console.log(res);
@@ -23,7 +25,18 @@ export const WeatherApp = () => {
           console.log(res);
         }
       })
-  }, [currentUrl])
+  }, [endpoints.currentUrl])
+
+  useEffect(() => {
+    apiConnect(endpoints.forecastUrl)
+      .then(res => {
+        if (!res.ok) {
+          console.log(res);
+        } else {
+          console.log(res);
+        }
+      })
+  }, [endpoints.forecastUrl]);
 
   const infoGetter = (data) => {
     setInfo(data);
@@ -39,6 +52,7 @@ export const WeatherApp = () => {
       </header>
       <main>
         <section>
+          <h2>{}</h2>
           <DataInfo info={info} setInfo={setInfo} infoGetter={infoGetter}/>
         </section>
         <section>

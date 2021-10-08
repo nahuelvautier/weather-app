@@ -1,21 +1,18 @@
 import { useEffect, useState } from "react";
 
-const initialinfo = {
-  current: "",
-  forecast: "",
-}
+const initialForm = {
+  id: null,
+  city: "",
+};
 
-const initialForm = "";
-
-const FormGetter = ({ info, setInfo, infoGetter }) => {
+const FormGetter = ({ info, setInfo  }) => {
   const [form, setForm] = useState(initialForm);
 
   useEffect(() => {
     if (info) {
       setForm(info);
     } else {
-      setForm(initialinfo);
-      return;
+      setForm(initialForm);
     }
   }, [info]);
 
@@ -26,7 +23,7 @@ const FormGetter = ({ info, setInfo, infoGetter }) => {
       alert("Ingresa una ciudad");
       return;
     } else {
-      infoGetter(form)
+      setInfo(form);
     }
   }
 

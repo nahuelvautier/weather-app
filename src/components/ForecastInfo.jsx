@@ -1,6 +1,6 @@
 const ForecastInfo = () => {
   return (
-    <aside>
+    <aside className="">
       
     </aside>
   )
