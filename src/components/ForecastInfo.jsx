@@ -3,7 +3,7 @@ const ForecastInfo = () => {
     <aside className="">
       
     </aside>
-  )
+  );
 }
 
-export default ForecastInfo
+export default ForecastInfo;

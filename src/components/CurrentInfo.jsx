@@ -1,4 +1,5 @@
-const CurrentInfo = ({ info,  }) => {
+const CurrentInfo = () => {
+  
   return (
     <article className="">
        
