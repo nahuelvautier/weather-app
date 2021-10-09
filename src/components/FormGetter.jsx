@@ -5,27 +5,8 @@ const initialForm = {
   city: "",
 };
 
-const FormGetter = ({ info, setInfo  }) => {
+const FormGetter = ({ info, setInfo, infoGetter  }) => {
   const [form, setForm] = useState(initialForm);
-
-  useEffect(() => {
-    if (info) {
-      setForm(info);
-    } else {
-      setForm(initialForm);
-    }
-  }, [info]);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!form) {
-      alert("Ingresa una ciudad");
-      return;
-    } else {
-      setInfo(form);
-    }
-  }
 
   const handleChange = (e) => {
     setForm({
@@ -34,10 +15,22 @@ const FormGetter = ({ info, setInfo  }) => {
     });
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!form) {
+      alert("Ciudad");
+      return;
+    }
+
+    infoGetter(form);
+    setForm(initialForm);
+  }
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="search" name="city" onChange={handleChange} />
+        <input type="search" name="city" onChange={handleChange} value={form.city} />
         <input type="submit" value="Buscar" />
       </form>
     </div>

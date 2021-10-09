@@ -1,42 +1,44 @@
 import React, { useEffect, useState } from "react";
-import DataInfo from "./DataInfo";
+import CurrentInfo from "./CurrentInfo";
 import ForecastInfo from "./ForecastInfo";
 import FormGetter from "./FormGetter";
 import { helperFetch } from "../helpers/helperFetch";
 import APIKEY from "../helpers/helperKey";
 
 export const WeatherApp = () => {
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState(null);
+  const [current, setCurrent] = useState(null);
+  const [forecast, setForecast] = useState(null);
   const [error, setError] = useState(null);
 
   const apiConnect = helperFetch();
 
-  const endpoints = {
-    currentUrl: `https://api.openweathermap.org/data/2.5/weather?q=${info.city}&appid=${APIKEY.key}`,
-    forecastUrl: `https://api.openweathermap.org/data/2.5/forecast?q=${info.city}&appid=${APIKEY.key}`,
-  }
-
   useEffect(() => {
-    apiConnect(endpoints.currentUrl)
-      .then(res => {
-        if (!res.ok) {
-          console.log(res);
-        } else {
-          console.log(res);
-        }
-      })
-  }, [endpoints.currentUrl])
+    const fetchData = async () => {
+      if (info === null) return;
 
-  useEffect(() => {
-    apiConnect(endpoints.forecastUrl)
-      .then(res => {
-        if (!res.ok) {
-          console.log(res);
-        } else {
-          console.log(res);
-        }
-      })
-  }, [endpoints.forecastUrl]);
+      const { city } = info || "";
+
+      let currentUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY.key}`;
+      let forecastUrl =`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKEY.key}`;
+
+      console.log(currentUrl);
+      console.log(forecastUrl);
+
+      const [currentRes, forecastRes] = await Promise.all([
+        apiConnect(currentUrl),
+        apiConnect(forecastUrl),
+      ]);
+
+      console.log(currentRes);
+      console.log(forecastRes);
+
+      setCurrent(currentRes);
+      setForecast(forecastRes);
+    }
+
+    fetchData();
+  }, [info]);
 
   const infoGetter = (data) => {
     setInfo(data);
@@ -51,13 +53,8 @@ export const WeatherApp = () => {
         </nav>
       </header>
       <main>
-        <section>
-          <h2>{}</h2>
-          <DataInfo info={info} setInfo={setInfo} infoGetter={infoGetter}/>
-        </section>
-        <section>
-          <ForecastInfo info={info} setInfo={setInfo} infoGetter={infoGetter}/>
-        </section>
+          {info && <CurrentInfo info={info} current={current} forecast={forecast} />}
+          {/* {info && <ForecastInfo info={info} setInfo={setInfo} infoGetter={infoGetter}/>} */}
       </main>
       <footer className="footer-container">
 
