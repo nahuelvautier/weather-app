@@ -11,9 +11,9 @@ export const WeatherApp = () => {
   const [forecast, setForecast] = useState(null);
   const [loader, setLoader] = useState(false);
 
-  const apiConnect = helperFetch();
-
+  
   useEffect(() => {
+    const apiConnect = helperFetch();
     const fetchData = async () => {
       if (info === null) return;
 
@@ -21,8 +21,8 @@ export const WeatherApp = () => {
 
       const { city } = info;
 
-      let currentUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKEY.key}`;
-      let forecastUrl =`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKEY.key}`;
+      let currentUrl =`https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=es&appid=${APIKEY.key}`;
+      let forecastUrl =`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=es&appid=${APIKEY.key}`;
 
       //console.log(currentUrl);
       //console.log(forecastUrl);
@@ -32,8 +32,8 @@ export const WeatherApp = () => {
         apiConnect(forecastUrl),
       ]);
 
-      console.log(currentRes);
-      console.log(forecastRes);
+      //console.log(currentRes);
+      //console.log(forecastRes);
 
       setCurrent(currentRes);
       setForecast(forecastRes);
@@ -52,8 +52,8 @@ export const WeatherApp = () => {
     <div className="weather-app-container">
       <header className="header-container">
         <nav>
-          <h1>Weather APP</h1>
-          <FormGetter info={info} setInfo={setInfo} infoGetter={infoGetter} />
+          <h1>Weather App</h1>
+          <FormGetter infoGetter={infoGetter} />
         </nav>
       </header>
       <main>

@@ -1,11 +1,10 @@
 import { useState } from "react";
 
 const initialForm = {
-  id: null,
   city: "",
 };
 
-const FormGetter = ({ info, setInfo, infoGetter  }) => {
+const FormGetter = ({ infoGetter  }) => {
   const [form, setForm] = useState(initialForm);
 
   const handleChange = (e) => {
@@ -18,8 +17,8 @@ const FormGetter = ({ info, setInfo, infoGetter  }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!form) {
-      alert("Ciudad");
+    if (!form.city) {
+      alert("Ingresa una ciudad");
       return;
     }
 
