@@ -17,6 +17,8 @@ export const WeatherApp = () => {
     const fetchData = async () => {
       if (info === null) return;
 
+      setCurrent(null);
+      setForecast(null);
       setLoader(true);
 
       const { city } = info;
@@ -58,7 +60,7 @@ export const WeatherApp = () => {
       </header>
       <main>
         {loader && <Loader />}
-        {info && <WeatherDetails info={info} current={current} forecast={forecast} />}
+        {info && <WeatherDetails current={current} forecast={forecast} />}
       </main>
       <footer className="footer-container">
 

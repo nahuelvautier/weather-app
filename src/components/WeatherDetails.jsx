@@ -5,36 +5,45 @@ import Message from "./Message";
 const WeatherDetails = ({ current, forecast }) => {
   if (!current || !forecast) return null;
 
-  let { weather, main, visibility, wind, sys } = current;
-
+  let { weather, main, wind, sys } = current;
+  let { list } = forecast;
+  
   //console.log(current);
   //console.log(forecast);
 
+  const kelvinToCelcius = (celcius) => {
+    celcius = main.temp - 273.15;
+    return Math.ceil(celcius);
+  }
+
   return (
     <section className="section-container">
-      {current.error === true || current.name === "Abort Error" 
+      {current.error === true || current.name === "Abort Error"
         ? <Message 
             msg="Se ha producido un error, intente nuevamente." 
             bgColor="#dc4535" 
           /> 
         : <CurrentInfo
             current={current}
-            weather={weather} 
+            weather={weather}
             main={main}
             wind={wind}
-            visibility={visibility}
             sys={sys}
+            kelvinToCelcius={kelvinToCelcius}
           />
       }
 
-      {!forecast.error 
+      {!forecast.error
         ? <ForecastInfo 
-
-          /> 
-        : <Message 
-            msg="Hubo un error: No se puede acceder al pronóstico."  
-            bgColor="#dc4545"
-          />}
+            forecast={forecast}
+            list={list}
+            kelvinToCelcius={kelvinToCelcius}
+          />
+          : <Message 
+              msg="Hubo un error: No se puede acceder al pronóstico."  
+              bgColor="#dc4545"
+            />
+      }
     </section>
   );
 }
