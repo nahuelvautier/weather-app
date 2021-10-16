@@ -1,16 +1,17 @@
-import TomorrowForecast from "./TomorrowForecast";
-import AfterTomorrowForecast from "./AfterTomorrowForecast";
-import NextDayAfterTomorrowForecast from "./NextDayAfterTomorrowForecast";
+import ListForecast from "./ListForecast";
 
 const ForecastInfo = ({ forecast, list, kelvinToCelcius }) => {
- // 9, 12, 14 - after tomorrow
- // 17, 20, 22 - next day after
-
   return (
     <article className="forecast-weather-wrapper">
-      <TomorrowForecast list={list} kelvinToCelcius={kelvinToCelcius} />
-      <AfterTomorrowForecast list={list} kelvinToCelcius={kelvinToCelcius} />
-      <NextDayAfterTomorrowForecast list={list} kelvinToCelcius={kelvinToCelcius} />
+      {list.map((el, index) => 
+      <ListForecast 
+          key={index}
+          forecast={forecast}
+          list={list} 
+          index={index}
+          kelvinToCelcius={kelvinToCelcius} 
+        />
+      )}
     </article>
   );
 }

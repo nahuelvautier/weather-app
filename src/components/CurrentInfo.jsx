@@ -19,13 +19,13 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
       </figure>
       <aside className="current-weather-specifics">
         <div>
-          <p>Temperatura: {kelvinToCelcius(main.temp)}° C</p>
-          <p>Mínima: {kelvinToCelcius(main.temp_min)}° C</p>
-          <p>Máxima: {kelvinToCelcius(main.temp_max)}° C</p>
-          <p>Sensación térmica: {kelvinToCelcius(main.feels_like)}° C</p>
+          <p>Temperatura: {kelvinToCelcius(main.temp)}°C</p>
+          <p>Mínima: {kelvinToCelcius(main.temp_min)}°C</p>
+          <p>Máxima: {kelvinToCelcius(main.temp_max)}°C</p>
+          <p>Sensación térmica: {kelvinToCelcius(main.feels_like)}°C</p>
         </div>
         <div>
-          <p>Humedad: {main.humidity} %</p>
+          <p>Humedad: {main.humidity}%</p>
           <p>Viento: {wind.speed} km/h</p>
         </div>
       </aside>
