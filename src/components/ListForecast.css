@@ -1,0 +1,85 @@
+.forecast-container {
+  margin: 1rem .5rem;
+  padding: 1rem;
+  max-width: 100%;
+  width: 100%;
+  display: inline-flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border-bottom: thin solid lightblue;
+}
+
+.forecast-container h3 {
+  font-size: 90%;
+  white-space: nowrap;
+  transform: translate(-100%, 0);
+}
+
+.forecast-icon-container img {
+  margin-top: -1.5rem;
+}
+
+.forecast-icon-container figcaption {
+  margin-top: -2rem;
+  margin-bottom: 1.5rem;;
+  font-size: 80%;
+  font-family: monospace, estangelo;
+  font-style: italic;
+  font-weight: 550;
+  white-space: nowrap;
+  transform: translate(35%, 0);
+}
+
+.specs-wrapper {
+  margin: 0 .25rem;
+  display: flex;
+  flex-direction: column-reverse;
+  transform: translate(-100%, 0);
+  white-space: nowrap;
+}
+
+.specs-wrapper p {
+  font-size: 65%;
+  font-family: consolas;
+}
+
+
+/*MQ*/
+@media screen and (min-width: 480px) {
+  .forecast-container {
+    width: 40%;
+    border-bottom: none;
+  }
+
+  .forecast-container h3 { transform: translate(-40%, 0); }
+  .forecast-icon-container figcaption { transform: translate(30%, 0); }
+
+  .specs-wrapper {
+    margin: 0 .8rem;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    transform: translate(0, 0);
+  }
+
+  .time-rain-wrapper {
+    text-align: left;
+    transform: translate(-15%, 0);
+  }
+  .time-temp-wrapper {
+    text-align: right;
+    transform: translate(15%, 0);
+  }
+}
+
+@media screen and (min-width: 680px) {
+  .forecast-container { width: 29%; }
+}
+
+@media screen and (min-width: 992px) {
+  .specs-wrapper { transform: translate(5%, 0); }
+
+  .forecast-icon-container figcaption { transform: translate(15%, 0); }
+
+  .forecast-container { width: 18%;  }
+}

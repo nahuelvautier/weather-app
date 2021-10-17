@@ -1,4 +1,6 @@
-const ListForecast = ({ forecast, list, index, kelvinToCelcius }) => {
+import "./ListForecast.css";
+
+const ListForecast = ({ list, index, kelvinToCelcius }) => {
   //console.log(list);
   //console.log(index);
 
@@ -19,11 +21,11 @@ const ListForecast = ({ forecast, list, index, kelvinToCelcius }) => {
   if (weekDays.includes("Sun")) weekDays = "Domingo";
 
   return (
-    <aside>
+    <aside className="forecast-container">
       <h3>{weekDays} {dateSliced}</h3>
       <figure className="forecast-icon-container">
         <img src={weatherIcon} alt="Forecast Icon" />
-        <figcaption><time>{timeSliced}hs</time> | {queryRoute.weather[0].description}</figcaption>
+        <figcaption>{queryRoute.weather[0].description} | <time>{timeSliced}hs</time></figcaption>
       </figure>
       <div className="specs-wrapper">
         <div className="time-rain-wrapper">
@@ -32,11 +34,11 @@ const ListForecast = ({ forecast, list, index, kelvinToCelcius }) => {
               <p>Vien: {queryRoute.wind.speed}km/h</p>
             </span>
         </div>
-        <div>
+        <div className="time-temp-wrapper">
           <span>
             <p>Temp: {kelvinToCelcius(queryRoute.main.temp)}°C</p>
-            <p>Min: {kelvinToCelcius(queryRoute.main.temp_min)}°C</p>
-            <p>Max: {kelvinToCelcius(queryRoute.main.temp_max)}°C</p>
+            <p>Mín: {kelvinToCelcius(queryRoute.main.temp_min)}°C</p>
+            <p>Máx: {kelvinToCelcius(queryRoute.main.temp_max)}°C</p>
           </span>
         </div>
       </div>
