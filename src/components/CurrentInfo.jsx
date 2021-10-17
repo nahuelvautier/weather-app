@@ -1,7 +1,7 @@
 import "./CurrentInfo.css";
 
 const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => {
-  const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+  const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@4x.png`;
 
   //console.log(weather);
   //console.log(main.temp);
@@ -28,7 +28,7 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
         </div>
         <div>
           <p>Humedad: <span> {main.humidity}%</span></p>
-          <p><span>S. térmica:</span> {kelvinToCelcius(main.feels_like)}°C</p>
+          <p><span>S. Térm:</span> {kelvinToCelcius(main.feels_like)}°C</p>
           <p>Viento: <span> {wind.speed} km/h</span></p>
         </div>
       </aside>

@@ -26,6 +26,7 @@
 
 .current-weather-wrapper figcaption {
   margin-left: -3rem;
+  font-size: 150%;
   white-space: nowrap;
 }
 
@@ -41,7 +42,7 @@
   margin: 5% auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .current-weather-specs p {
@@ -52,3 +53,17 @@
 }
 
 .current-weather-specs span { white-space: nowrap; }
+
+
+/*MQ*/
+@media screen and (min-width: 480px ) {
+  .current-weather-specs div {
+    justify-content: space-between;
+  }
+
+  .current-weather-specs p {
+    padding-right: 0;
+    border-right: none;
+    text-align: center;
+  }
+} 

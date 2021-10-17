@@ -14,12 +14,12 @@
 }
 
 html {
-  max-width: var(--container-width);
   font-family: var(--main-font);
   font-size: var(--font-size);
 }
 
 body {
+  max-width: var(--container-width);
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -41,7 +41,7 @@ main {
 
 img {
   max-width: 100%;
-  min-width: 5rem;
+  min-width: 10rem;
   height: auto;
 }
 
@@ -49,9 +49,6 @@ img {
 /*MQ*/
 @media screen and (min-width: 480px ) {
   nav {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between; */
     flex-direction: row;
     justify-content: space-between;
   }
