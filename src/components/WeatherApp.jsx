@@ -54,7 +54,9 @@ export const WeatherApp = () => {
     <div className="weather-app-container">
       <header className="header-container">
         <nav>
-          <h1>Weather App</h1>
+          <div>
+            <h1>Weather App</h1>
+          </div>
           <FormGetter infoGetter={infoGetter} />
         </nav>
       </header>

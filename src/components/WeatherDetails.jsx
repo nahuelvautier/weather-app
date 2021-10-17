@@ -13,7 +13,7 @@ const WeatherDetails = ({ current, forecast }) => {
 
   const kelvinToCelcius = (celcius) => {
     celcius = main.temp - 273.15;
-    return Math.ceil(celcius);
+    return Number.parseFloat(celcius).toFixed(1);
   }
 
   return (

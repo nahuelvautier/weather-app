@@ -1,0 +1,6 @@
+form { white-space: nowrap; }
+
+input {
+  padding: .15rem;
+  border-radius: .15rem;
+}

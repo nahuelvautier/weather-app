@@ -1,0 +1,54 @@
+.current-weather-wrapper {
+  padding: 2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.titles-wrapper { width: 100%; }
+
+.current-weather-wrapper h2 { 
+  text-align: right;
+  white-space: nowrap; 
+}
+
+.current-weather-wrapper h3 {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.current-weather-wrapper figure {
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.current-weather-wrapper figcaption {
+  margin-left: -3rem;
+  white-space: nowrap;
+}
+
+.current-weather-specs { padding: 1rem; }
+
+
+.current-weather-specs {
+  border-top: thin solid lightblue;
+  border-bottom: thin solid lightblue;
+}
+
+.current-weather-specs div {
+  margin: 5% auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.current-weather-specs p {
+  padding-right: .5rem;
+  margin: 0 1rem;
+  border-right: thin solid lightblue ;
+  text-align: right;
+}
+
+.current-weather-specs span { white-space: nowrap; }
