@@ -18,12 +18,12 @@ input[type="submit"] {
   padding: 1px;
   font-family: fantasy;
   color: #777;
-  background-color: #ccc;
+  background-color: #bbb;
   transform: translate(0, 2px);
 }
 
 input[type="submit"]:hover {
   cursor: pointer;
-  color: #aaa;
-  background-color: #eee;
+  color: #999;
+  background-color: #ddd;
 }
