@@ -85,8 +85,7 @@
     width: 20%;
   }
   
-  .specs-wrapper { transform: translate(5%, 0); }
+  .specs-wrapper { transform: translate(-5%, 0); }
 
   .forecast-icon-container figcaption { transform: translate(15%, 0); }
-
 }

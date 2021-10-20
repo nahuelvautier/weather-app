@@ -18,6 +18,8 @@ html {
   font-size: var(--font-size);
 }
 
+#root { background-color: #111328 ;}
+
 body {
   margin: 0 auto;
   max-width: var(--container-width);
@@ -45,7 +47,8 @@ h1, h2, h3, p, figcaption { color: #fff; }
 
 main {
   flex-grow: 1;
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
 }
 
 img {

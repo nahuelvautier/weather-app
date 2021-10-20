@@ -44,6 +44,7 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
           <div><p>Viento: <span> {wind.speed} km/h</span></p></div>
         </div>
       </aside>
+      <hr />
     </article>
   );
 }

@@ -10,6 +10,8 @@
 .titles-wrapper { width: 100%; }
 
 .current-weather-wrapper h2 { 
+  margin-top: 1rem;
+  margin-bottom: .25rem;
   text-align: right;
   font-size: 170%;
   white-space: nowrap; 
@@ -33,7 +35,10 @@
   white-space: nowrap;
 }
 
-.current-weather-specs { padding: 1rem; }
+.current-weather-specs {
+  padding: 1rem;
+  margin-bottom: .25rem;
+}
 
 .current-weather-specs div {
   display: flex;
