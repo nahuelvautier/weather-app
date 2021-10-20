@@ -12,7 +12,8 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
   if (iconUrl.includes("d@4x")) {
     //document.getElementById("root").style.backgroundImage = "url(https://i.pinimg.com/originals/bc/22/a8/bc22a864b99bfbfab6c1e7b52973916a.gif)";
     document.getElementById("root").style.backgroundImage = "url(https://img.allw.mn/content/sn/x3/wi29hyxi54ef412c818ca644447713_640x360.gif)";
-    document.getElementById("root").style.backgroundSize = "cover";
+    document.getElementById("root").style.backgroundSize = "100% 100%";
+    //document.getElementById("root").style.backgroundSize = "cover";
     document.getElementById("root").style.backgroundRepeat = "no-repeat";
     document.getElementById("root").style.backgroundAttachment = "fixed";
   } else if (iconUrl.includes("n@4x")) {
