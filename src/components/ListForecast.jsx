@@ -30,8 +30,8 @@ const ListForecast = ({ list, index, kelvinToCelcius }) => {
       <div className="specs-wrapper">
         <div className="time-rain-wrapper">
             <span>
-              <p>Hum: {queryRoute.main.humidity}%</p>
               <p>Vien: {queryRoute.wind.speed}km/h</p>
+              <p>Hum: {queryRoute.main.humidity}%</p>
             </span>
         </div>
         <div className="time-temp-wrapper">

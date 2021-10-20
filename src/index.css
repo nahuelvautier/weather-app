@@ -45,6 +45,7 @@ h1, h2, h3, p, figcaption { color: #fff; }
 
 main {
   flex-grow: 1;
+  height: 100vh;
 }
 
 img {
