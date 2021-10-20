@@ -1,13 +1,29 @@
 form { white-space: nowrap; }
 
 input {
-  margin-top: .25rem;
+  margin: .25rem .15rem;
   padding: .15rem;
-  border-radius: .15rem;
+  border-radius: .25rem;
+  border-color: #fff;
+  outline-color: #fff;
 }
 
 input::placeholder {
-  padding: .1rem;
+  padding: .15rem;
   font-style: italic;
   font-weight: bold;
+}
+
+input[type="submit"] {
+  padding: 1px;
+  font-family: fantasy;
+  color: #777;
+  background-color: #ccc;
+  transform: translate(0, 2px);
+}
+
+input[type="submit"]:hover {
+  cursor: pointer;
+  color: #aaa;
+  background-color: #eee;
 }

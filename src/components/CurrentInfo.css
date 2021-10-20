@@ -1,10 +1,10 @@
 .current-weather-wrapper {
   padding: 1rem;
-  padding-bottom: 2rem;
   height: 100vh;
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column nowrap;
   justify-content: space-around;
+  border-bottom: .25rem dashed #fff;;
 }
 
 .titles-wrapper { width: 100%; }
@@ -13,7 +13,7 @@
   margin-top: 1rem;
   margin-bottom: .25rem;
   text-align: right;
-  font-size: 170%;
+  font-size: 165%;
   white-space: nowrap; 
 }
 
@@ -27,12 +27,14 @@
   padding: 1.5rem;
   display: flex;
   align-items: flex-end;
+  transform: translate(-25%, 0);
 }
 
 .current-weather-wrapper figcaption {
   margin-left: -3rem;
   font-size: 150%;
   white-space: nowrap;
+  transform: translate(-25%, 0);
 }
 
 .current-weather-specs {
@@ -56,11 +58,19 @@
 
 
 /*MQ*/
-@media screen and (min-width: 480px ) {
-  .current-weather-wrapper { 
-    padding-top: 0;
-    padding-bottom: 5rem;
+
+@media screen and (min-width: 360px ) {
+  .current-weather-wrapper figure {
+    transform: translate(-10%, 0);
   }
+}
+
+@media screen and (min-width: 480px ) {
+  .current-weather-wrapper figure {
+    transform: translate(0, 0);
+  }
+
+  .current-weather-wrapper figcaption { transform: translate(0, 0); }
 
   .current-weather-specs div {
     margin: 3% 5%;
@@ -78,6 +88,8 @@
 } 
 
 @media screen and (min-width: 680px) {
+  .current-weather-wrapper { margin-bottom: 3rem; }
+
   .current-weather-specs div { margin: 1rem auto; }
 
   .current-weather-specs p {

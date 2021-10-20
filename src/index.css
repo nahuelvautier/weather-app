@@ -51,6 +51,11 @@ main {
   height: auto;
 }
 
+hr {
+  height: .25rem;
+  background-color: #fff;
+}
+
 img {
   max-width: 100%;
   min-width: 10rem;
