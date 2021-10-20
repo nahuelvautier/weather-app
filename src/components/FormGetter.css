@@ -1,6 +1,13 @@
 form { white-space: nowrap; }
 
 input {
+  margin-top: .25rem;
   padding: .15rem;
   border-radius: .15rem;
+}
+
+input::placeholder {
+  padding: .1rem;
+  font-style: italic;
+  font-weight: bold;
 }

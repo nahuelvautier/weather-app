@@ -1,7 +1,7 @@
 :root {
   --font-size: 16px;
-  --container-width: 1280px;
-  --main-font: "Helvetica";
+  --container-width: 1920px;
+  --main-font: Helvetica;
 }
 
 /*RESET*/
@@ -19,6 +19,7 @@ html {
 }
 
 body {
+  margin: 0 auto;
   max-width: var(--container-width);
   display: flex;
   flex-direction: column;
@@ -33,7 +34,14 @@ nav {
   align-items: center;
 }
 
-nav>* { margin: .1rem 0; }
+nav>* { margin: .7rem 0; }
+
+h1 {
+  font-size: 230%;
+  white-space: nowrap;
+}
+
+h1, h2, h3, p, figcaption { color: #fff; }
 
 main {
   flex-grow: 1;

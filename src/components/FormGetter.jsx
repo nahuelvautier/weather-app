@@ -30,7 +30,7 @@ const FormGetter = ({ infoGetter  }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="search" name="city" onChange={handleChange} value={form.city} />
+        <input type="search" name="city" placeholder="Ingresa una ciudad..." onChange={handleChange} value={form.city} />
         <input type="submit" value="Buscar" />
       </form>
     </div>

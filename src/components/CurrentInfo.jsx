@@ -8,6 +8,18 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
   //console.log(visibility);
   //console.log(wind);
   //console.log(sys);
+
+  if (iconUrl.includes("d@4x")) {
+    document.getElementById("root").style.backgroundImage = "url(https://i.pinimg.com/originals/bc/22/a8/bc22a864b99bfbfab6c1e7b52973916a.gif)";
+    document.getElementById("root").style.backgroundSize = "cover";
+    document.getElementById("root").style.backgroundRepeat = "no-repeat";
+    document.getElementById("root").style.backgroundAttachment = "fixed";
+  } else if (iconUrl.includes("n@4x")) {
+    document.getElementById("root").style.backgroundImage = "url(https://i.gifer.com/origin/c5/c5660392f5ffd5b4632dd944f3de2134.gif)";
+    document.getElementById("root").style.backgroundSize = "cover";
+    document.getElementById("root").style.backgroundRepeat = "no-repeat";
+    document.getElementById("root").style.backgroundAttachment = "fixed";
+  }
   
   return (
     <article className="current-weather-wrapper">
@@ -22,14 +34,14 @@ const CurrentInfo = ({ current, weather, main, wind, sys, kelvinToCelcius }) => 
       </figure>
       <aside className="current-weather-specs">
         <div>
-          <p>Temperatura: {kelvinToCelcius(main.temp)}°C</p>
-          <p>Mínima: {kelvinToCelcius(main.temp_min)}°C</p>
-          <p>Máxima: {kelvinToCelcius(main.temp_max)}°C</p>
+          <div><p>Temperatura: {kelvinToCelcius(main.temp)}°C</p></div>
+          <div><p>Mínima: {kelvinToCelcius(main.temp_min)}°C</p></div>
+          <div><p>Máxima: {kelvinToCelcius(main.temp_max)}°C</p></div>
         </div>
         <div>
-          <p>Humedad: <span> {main.humidity}%</span></p>
-          <p><span>S. Térm:</span> {kelvinToCelcius(main.feels_like)}°C</p>
-          <p>Viento: <span> {wind.speed} km/h</span></p>
+          <div><p>Humedad: <span> {main.humidity}%</span></p></div>
+          <div><p><span>S. Térm:</span> {kelvinToCelcius(main.feels_like)}°C</p></div>
+          <div><p>Viento: <span> {wind.speed} km/h</span></p></div>
         </div>
       </aside>
     </article>

@@ -6,7 +6,7 @@ import APIKEY from "../helpers/helperKey";
 import Loader from "./Loader";
 
 export const WeatherApp = () => {
-  const [info, setInfo] = useState(null);
+  const [info, setInfo] = useState({ city: "Buenos Aires"} );
   const [current, setCurrent] = useState(null);
   const [forecast, setForecast] = useState(null);
   const [loader, setLoader] = useState(false);

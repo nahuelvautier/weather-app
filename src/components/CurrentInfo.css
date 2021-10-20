@@ -1,20 +1,23 @@
 .current-weather-wrapper {
-  padding: 2rem;
+  padding: 1rem;
+  padding-bottom: 2rem;
   height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-flow: column wrap;
+  justify-content: space-around;
 }
 
 .titles-wrapper { width: 100%; }
 
 .current-weather-wrapper h2 { 
   text-align: right;
+  font-size: 170%;
   white-space: nowrap; 
 }
 
 .current-weather-wrapper h3 {
   margin-top: 1rem;
+  font-size: 160%;
   text-align: left;
 }
 
@@ -32,24 +35,16 @@
 
 .current-weather-specs { padding: 1rem; }
 
-
-.current-weather-specs {
-  border-top: thin solid lightblue;
-  border-bottom: thin solid lightblue;
-}
-
 .current-weather-specs div {
-  margin: 5% auto;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.current-weather-specs p {
-  padding-right: .5rem;
-  margin: 0 1rem;
-  border-right: thin solid lightblue ;
-  text-align: right;
+.current-weather-specs p { 
+  margin: 2% auto; 
+  font-size: 85%;
+  text-align: center;
 }
 
 .current-weather-specs span { white-space: nowrap; }
@@ -57,13 +52,30 @@
 
 /*MQ*/
 @media screen and (min-width: 480px ) {
-  .current-weather-specs div {
-    justify-content: space-between;
+  .current-weather-wrapper { 
+    padding-top: 0;
+    padding-bottom: 5rem;
   }
 
+  .current-weather-specs div {
+    margin: 3% 5%;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+
+
   .current-weather-specs p {
-    padding-right: 0;
-    border-right: none;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 95%;
   }
 } 
+
+@media screen and (min-width: 680px) {
+  .current-weather-specs div { margin: 1rem auto; }
+
+  .current-weather-specs p {
+    font-size: 125%;
+  }
+}

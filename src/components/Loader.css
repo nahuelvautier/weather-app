@@ -1,8 +1,10 @@
 .lds-ellipsis {
-  display: inline-block;
+  margin: 10% auto;
+  display: block;
   position: relative;
   width: 80px;
   height: 80px;
+  text-align: center;
 }
 .lds-ellipsis div {
   position: absolute;

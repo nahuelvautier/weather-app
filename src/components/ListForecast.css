@@ -4,7 +4,7 @@
   max-width: 100%;
   width: 100%;
   display: inline-flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   align-items: center;
   border-bottom: thin solid lightblue;
 }
@@ -12,7 +12,7 @@
 .forecast-container h3 {
   font-size: 90%;
   white-space: nowrap;
-  transform: translate(-100%, 0);
+  transform: translate(-80%, 0);
 }
 
 .forecast-icon-container img {
@@ -59,7 +59,7 @@
     display: inline-flex;
     flex-direction: row;
     justify-content: space-evenly;
-    transform: translate(0, 0);
+    transform: translate(20%, 0);
   }
 
   .time-rain-wrapper {
@@ -74,12 +74,19 @@
 
 @media screen and (min-width: 680px) {
   .forecast-container { width: 29%; }
+
+  .specs-wrapper { transform: translate(35%, 0); }
+
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
+  .forecast-container {
+    margin: auto;
+    width: 20%;
+  }
+  
   .specs-wrapper { transform: translate(5%, 0); }
 
   .forecast-icon-container figcaption { transform: translate(15%, 0); }
 
-  .forecast-container { width: 18%;  }
 }
