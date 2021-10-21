@@ -62,6 +62,22 @@ img {
   height: auto;
 }
 
+a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color .3s ease-in-out;
+}
+
+a:hover { color: #ddf }
+
+footer {
+  padding: 2rem;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: flex-end;
+  text-align: right;
+}
+
 
 /*MQ*/
 @media screen and (min-width: 480px ) {

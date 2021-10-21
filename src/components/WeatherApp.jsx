@@ -4,6 +4,7 @@ import WeatherDetails from "./WeatherDetails";
 import { helperFetch } from "../helpers/helperFetch";
 import APIKEY from "../helpers/helperKey";
 import Loader from "./Loader";
+import FooterContent from "./FooterContent";
 
 export const WeatherApp = () => {
   const [info, setInfo] = useState({ city: "Buenos Aires"} );
@@ -46,9 +47,7 @@ export const WeatherApp = () => {
     fetchData();
   }, [info]);
 
-  const infoGetter = (data) => {
-    setInfo(data);
-  }
+  const infoGetter = (data) => setInfo(data);
 
   return (
     <div className="weather-app-container">
@@ -65,7 +64,7 @@ export const WeatherApp = () => {
         {info && <WeatherDetails current={current} forecast={forecast} />}
       </main>
       <footer className="footer-container">
-
+        <FooterContent />
       </footer>
     </div>
   )

@@ -1,7 +1,7 @@
 const Message = ({ msg, bgColor }) => {
   let styles = {
-    padding: "1rem",
-    marginBottom: "1rem",
+    margin: "10% auto",
+    padding: "10rem",
     textAlign: "center",
     color: "#fff",
     fontWeight: "bold",

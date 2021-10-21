@@ -5,7 +5,7 @@ input {
   padding: .15rem;
   border-radius: .25rem;
   border-color: #fff;
-  outline-color: #fff;
+  outline: none;
 }
 
 input::placeholder {
@@ -17,13 +17,12 @@ input::placeholder {
 input[type="submit"] {
   padding: 1px;
   font-family: fantasy;
-  color: #777;
+  color: #333;
   background-color: #bbb;
   transform: translate(0, 2px);
 }
 
 input[type="submit"]:hover {
   cursor: pointer;
-  color: #999;
   background-color: #ddd;
 }

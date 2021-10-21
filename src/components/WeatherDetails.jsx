@@ -18,10 +18,10 @@ const WeatherDetails = ({ current, forecast }) => {
 
   return (
     <section className="section-container">
-      {current.error === true || current.name === "Abort Error"
+      {current.error === true
         ? <Message 
             msg="Se ha producido un error, intente nuevamente." 
-            bgColor="#dc4535" 
+            bgColor="#dc453575"
           /> 
         : <CurrentInfo
             current={current}
@@ -39,10 +39,7 @@ const WeatherDetails = ({ current, forecast }) => {
             list={list}
             kelvinToCelcius={kelvinToCelcius}
           />
-          : <Message 
-              msg="Hubo un error: No se puede acceder al pronóstico."  
-              bgColor="#dc4545"
-            />
+          : null
       }
     </section>
   );

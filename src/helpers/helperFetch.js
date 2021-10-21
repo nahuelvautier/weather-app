@@ -4,17 +4,12 @@ export const helperFetch = () => {
       accept: "application/json",
     }
 
-    const controller = new AbortController();
-
-    options.signal = controller.signal;
     options.method = options.method || "GET";
     options.headers = options.headers
       ? { ...defaultHeaders, ...options.headers }
       : defaultHeaders;
 
     //console.log(options);
-
-    setTimeout(() => { controller.abort(); }, 3000);
 
     try {
       const res = await fetch(endpoint, options);
@@ -23,8 +18,8 @@ export const helperFetch = () => {
         status: res.status,
         statusText: res.statusText,
       }));
-    } catch (error) {
-      return error;
+    } catch (err) {
+      return err;
     }
   }
   

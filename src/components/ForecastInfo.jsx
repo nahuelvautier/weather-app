@@ -8,7 +8,7 @@ const ForecastInfo = ({ forecast, list, kelvinToCelcius }) => {
   }
 
   return (
-    <article style={styles} className="forecast-weather-wrapper">
+    <aside style={styles} className="forecast-weather-wrapper">
       {list.map((el, index) => 
       <ListForecast 
           key={index}
@@ -18,7 +18,7 @@ const ForecastInfo = ({ forecast, list, kelvinToCelcius }) => {
           kelvinToCelcius={kelvinToCelcius} 
         />
       )}
-    </article>
+    </aside>
   );
 }
 
