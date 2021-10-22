@@ -51,7 +51,7 @@
   }
 
   .forecast-container h3 { transform: translate(-40%, 0); }
-  .forecast-icon-container figcaption { transform: translate(30%, 0); }
+  .forecast-icon-container figcaption { transform: translate(25%, 0); }
 
   .specs-wrapper {
     margin: 0 .8rem;
@@ -74,7 +74,7 @@
 @media screen and (min-width: 720px) {
   .forecast-container { width: 28%; }
 
-  .specs-wrapper { transform: translate(35%, 0); }
+  .specs-wrapper { transform: translate(5%, 0); }
 }
 
 @media screen and (min-width: 1024px) {
@@ -82,8 +82,14 @@
     margin: auto;
     width: 20%;
   }
-  
-  .specs-wrapper { transform: translate(-5%, 0); }
 
-  .forecast-icon-container figcaption { transform: translate(15%, 0); }
+  .forecast-container:nth-child(36) { border-bottom: none; }
+  .forecast-container:nth-child(37) { border-bottom: none; }
+  .forecast-container:nth-child(38) { border-bottom: none; }
+  .forecast-container:nth-child(39) { border-bottom: none; }
+  .forecast-container:nth-child(40) { border-bottom: none; }
+  
+  .forecast-icon-container figcaption { transform: translate(5%, 0); }
+  
+  .specs-wrapper { transform: translate(-15%, 0); }
 }

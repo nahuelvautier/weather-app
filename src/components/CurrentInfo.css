@@ -42,16 +42,16 @@
   margin-bottom: .25rem;
 }
 
-.current-weather-specs div {
+.current-weather-specs span {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-content: center;
 }
 
 .current-weather-specs p { 
   margin: 2% auto; 
   font-size: 85%;
-  text-align: center;
 }
 
 .current-weather-specs span { white-space: nowrap; }
@@ -72,7 +72,7 @@
 
   .current-weather-wrapper figcaption { transform: translate(0, 0); }
 
-  .current-weather-specs div {
+  .current-weather-specs span {
     margin: 3% 5%;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -90,9 +90,7 @@
 @media screen and (min-width: 680px) {
   .current-weather-wrapper { margin-bottom: 3rem; }
 
-  .current-weather-specs div { margin: 1rem auto; }
+  .current-weather-specs span { margin: 1rem auto; }
 
-  .current-weather-specs p {
-    font-size: 125%;
-  }
+  .current-weather-specs p { font-size: 125%; }
 }

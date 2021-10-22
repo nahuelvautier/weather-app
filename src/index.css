@@ -64,11 +64,11 @@ img {
 
 a {
   text-decoration: none;
-  color: #ddd;
+  color: #eee;
   transition: color .3s ease-in-out;
 }
 
-a:hover { color: #ddf }
+a:hover { color: #fff }
 
 footer {
   padding: 2rem;
@@ -78,9 +78,13 @@ footer {
   text-align: right;
 }
 
+footer p {
+  color: #eee;
+}
+
 
 /*MQ*/
-@media screen and (min-width: 480px ) {
+@media screen and (min-width: 560px ) {
   nav {
     flex-direction: row;
     justify-content: space-between;
