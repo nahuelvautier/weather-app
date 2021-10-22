@@ -28,7 +28,11 @@ body {
   overflow-x: hidden;
 }
 
-header { padding: 1rem; }
+header {
+  display: block;
+  padding: 1rem;
+  margin-bottom: 3.5rem;
+}
 
 nav {
   display: flex;
