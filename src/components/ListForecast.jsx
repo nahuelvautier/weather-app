@@ -8,7 +8,6 @@ const ListForecast = ({ list, index, kelvinToCelcius }) => {
   let weatherIcon = `https://openweathermap.org/img/wn/${queryRoute.weather[0].icon}@4x.png`;
   let weekDays = new Date(queryRoute.dt_txt).toDateString();
   let date = new Date(queryRoute.dt_txt).toLocaleDateString();
-  let dateSliced = date.slice(0, 5);
   let time = new Date(queryRoute.dt_txt).toLocaleTimeString();
   let timeSliced = time.slice(0, 5);
 
@@ -23,7 +22,7 @@ const ListForecast = ({ list, index, kelvinToCelcius }) => {
   return (
     <>
       <div className="forecast-container">
-        <h3>{weekDays} {dateSliced}</h3>
+        <h3>{weekDays} {date}</h3>
         <figure className="forecast-icon-container">
           <img src={weatherIcon} alt="Icono del pronóstico" loading="lazy" />
           <figcaption>{queryRoute.weather[0].description} | <time>{timeSliced}hs</time></figcaption>
